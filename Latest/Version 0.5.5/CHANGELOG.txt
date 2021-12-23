@@ -1,0 +1,32 @@
+CHANGELOG v0.3.6 to v0.5:
+
+Major UI overhaul (now working):
+- Switched to full UI in traitsui
+- PyQt is still being used, however it is used as a toolkit for 
+  traitsui
+
+Major changes (UI):
+- No longer has a bug where the program must be restarted in order to plot another satellite
+- The plotting is now done on screen so the user can see:
+	- If plotting multiple orbits, each orbit is shown on screen one-by-one
+	- The plotting is now animated.
+- There are now 3 methods of selecting a satellite or constellation:
+	- from a list of all active satellites
+	- from a list of featured satellites and constellations
+	- from a search bar
+- A progress bar has now been added to show the progress of plotting the satellite(s)
+- Most errors are now shown through a UI dialogue rather than in console.
+
+Changes to the back-end:
+- Some refinement and increased efficiency to sending and getting data from the server.
+	- This can still be improved
+- Overhaul of updating TLE data still needs to be completed:
+	- All TLEs need to be kept up to date
+	- This can be done by redownloading all TLEs at set intervals
+	- Or by downloading new TLEs from Celestrak
+- No change to any of the actual functions involved in plotting data
+	- The file 'plotting_module' has been left intact since v0.3.
+- Changes to filenames. 
+	- 'module_test.py' is now 'plotting_module'
+	- 'gui_test.py' is now obselete 
+	- The new GUI is in the file 'traitsui_test'

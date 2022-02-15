@@ -1,0 +1,37 @@
+Index: Server/server_download.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Server/server_download.py	(date 1582128374908)
++++ Server/server_download.py	(date 1582128374908)
+@@ -7,6 +7,7 @@
+ 
+ class Update:
+     # Checks if there are any new satellites - and adds them to the database
++    # All Data will need to be updated frequently - every few hours - as TLEs go out of date quickly.
+     # the table's sql is as follows:
+     # CREATE table mydatabase.tles
+     # (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), line1 VARCHAR(255), line2 VARCHAR(255));
+@@ -36,21 +37,6 @@
+ 
+         # print(val, "\nrecord inserted")
+ 
+-    def currentHighestCatNum(self):
+-        # gets most recent satellite in db using primary key
+-        sql = "SELECT name,line1,line2 FROM tles ORDER BY id DESC LIMIT 1"
+-        self.mycursor.execute(sql, )
+-        response = self.mycursor.fetchall()  # get a response from the database
+-        print(response)
+-        # getting the catalog number from the TLE
+-        try:
+-            catNum = re.sub('[^0-9]', '', response[0][1].split(" ")[1])
+-        except IndexError or ValueError:
+-            # if there are no TLEs in the db then let catNum be 0
+-            catNum = 0
+-        print(catNum)
+-        return int(catNum)
+-
+     def get_list(self):
+         # print(self.db)
+         tle_dictionary = self.dict

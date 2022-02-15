@@ -1,5 +1,8 @@
 # satellite-tracker
-Using Python to create a Satellite Tracking Interface.
+A Satellite Tracking Interface using python.
+This is an old project that is not regularly updated (code stoppped being updated around July 2020).
+Repo is still monitored.
+
 
 # Server Setup
 - Using mysql to create the table - copy this and create a database to store satellite information:

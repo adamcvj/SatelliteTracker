@@ -1,7 +1,10 @@
 # satellite-tracker
-A Satellite Tracking Interface using python.
-This is an old project that is not regularly updated (code stoppped being updated around July 2020).
-Repo is still monitored.
+A Satellite Tracking Interface using python.  
+This is an old project that is not maintained and is now archived.  
+The project was written without knowledge of git and proper software conventions which may explain why it's so messy!  
+
+### Project idea(s):
+- Perhaps a batch file or executable which can setup the server first and then run the client. Could also be used to time an update of the database which is important as orbit data is not accurate if it goes out of date - see: [info on satellite data and tracking](#info-on-satellite-data-and-tracking).
 
 
 # Server Setup
@@ -18,7 +21,7 @@ CREATE table mydatabase.tles (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(25
 - At the moment you will need to manually run server_download.py every 6 (or so) hours to keep the database updated - this increases the accuracy of satellite data.
 
 # Client Setup
-- Would highly recommend setting up a conda environment - these packages must be installed:
+- Setting up an anaconda environment is **highly** recommended - these packages must be installed:
   - traits
   - traitsui
   - tvtk
